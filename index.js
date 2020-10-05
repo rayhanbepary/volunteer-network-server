@@ -13,7 +13,7 @@ const port = 5000
 app.use(bodyParser.json());
 app.use(cors());
 
-const serviceAccount = require("./config/volunteer-network-5055d-firebase-adminsdk-qktkt-585731cfab.json");
+const serviceAccount = require(process.env.SER_ACC);
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: process.env.FIRE_DB
