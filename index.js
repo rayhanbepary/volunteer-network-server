@@ -97,4 +97,8 @@ client.connect(err => {
 
 });
 
+app.get("/", (req, res) => {
+    res.send("Volunteer Network Working")
+})
+
 app.listen( process.env.PORT || port );
