@@ -4,6 +4,7 @@ const cors = require('cors');
 const admin = require('firebase-admin');
 const MongoClient = require('mongodb').MongoClient;
 require('dotenv').config();
+const secrets = require('./config/secrets.js');
 
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.jsjow.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
@@ -13,7 +14,7 @@ const port = 5000
 app.use(bodyParser.json());
 app.use(cors());
 
-const serviceAccount = require("./volunteer-network-5055d-firebase-adminsdk-qktkt-585731cfab.json");
+const serviceAccount = require(secrets.jwtSecrets);
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: process.env.FIRE_DB
