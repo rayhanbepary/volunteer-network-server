@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const admin = require('firebase-admin');
 const MongoClient = require('mongodb').MongoClient;
-const ServiceAccount = require('./serviceAccount');
 require('dotenv').config();
 
 
@@ -14,7 +13,7 @@ const port = 5000
 app.use(bodyParser.json());
 app.use(cors());
 
-const serviceAccount = require(ServiceAccount);
+const serviceAccount = require("./volunteer-network-5055d-firebase-adminsdk-qktkt-585731cfab.json");
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: process.env.FIRE_DB
