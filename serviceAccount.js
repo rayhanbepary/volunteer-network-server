@@ -11,4 +11,4 @@
     "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-qktkt%40volunteer-network-5055d.iam.gserviceaccount.com"
 }
 
-export default ServiceAccount;
+module.exports = ServiceAccount;
